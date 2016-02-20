@@ -1,0 +1,30 @@
+ <md-toolbar class="toolbar-box "  layout="column" layout-align="center start">
+ 	  
+
+	<div flex class="md-toolbar-tools ">
+	<md-button ng-click="goBack()" aria-label="Back" style="min-width:0;">
+	<ng-md-icon icon="arrow_back"></ng-md-icon>
+	</md-button>
+	<h3 >
+	Back
+	</h3>
+
+	</div>
+	<div flex></div>
+  <div layout="row" layout-align="center center" style="width:100%">
+ 	
+      <h3 class="toolbar-title md-display-2" flex-gt-sm="90" flex-gt-md="80">{{ post.title }} </h3>
+  	
+  </div>
+  </md-toolbar>
+  <md-content>
+
+	<div class="grid-cont" layout="row" layout-align="center center">
+		<section  flex-gt-sm="90" flex-gt-md="80">
+			{{ post.content }}
+		</section>
+	</div>
+	
+	</md-content>
+
+

@@ -1,0 +1,32 @@
+<div ng-include="'toolbar.html'"></div>
+
+
+ <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column" >
+    <div ng-repeat="item in projects" flex-gt-md="30" flex-xs="100" flex-gt-xs="50" layout="column">
+       <md-card  ng-style="{'background-color': primaryColor,'color':'#ffffff'}">
+              <div class="portfolio-bg" ng-style="{'background-image':'url({{item.main_image}})'}">
+
+                <md-card-title class="widget-title" layout="column">
+                  <span class="md-headline">{{ item.title}}</span>
+                  <span class="md-caption" style="text-transform: uppercase;"></span>
+                </md-card-title>
+                <div class="shadow"></div>
+              </div>
+
+              <md-card-content> 
+                <p>
+                  {{item.title}}
+                </p>
+              </md-card-content>
+              <md-card-actions layout="row" layout-align="start center">
+                <md-card-icon-actions>
+                  <span hide-xs ng-repeat="key in item.keywords"class="md-caption chip">{{key}}</span>
+                  <span flex></span>
+                  <md-button ui-sref="portfolioPost({ postId : item.project_id })" class="md-raised" ng-style="{'background-color':'rgb(255,64,129)','color':'#ffffff'}">Explore</md-button>
+              </md-card-icon-actions>
+          
+               
+              </md-card-actions>
+            </md-card>
+    </div>
+  </md-concent>

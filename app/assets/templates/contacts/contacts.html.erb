@@ -1,0 +1,68 @@
+       <div ng-include="'toolbar.html'"></div>
+
+
+
+        <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+          <md-card flex-gt-sm="90" flex-gt-md="80" >
+            <div ng-cloak>
+              <md-content class="bg-white">
+                <md-tabs md-dynamic-height md-border-bottom>
+                  <md-tab label="About Me">
+                    <md-content class="md-padding bg-white">   
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+                    </md-content>
+                  </md-tab>
+                  <md-tab label="Photos">
+                    <md-content class="md-padding bg-white">
+                      <md-grid-list
+                        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+                        md-row-height-gt-md="1:1" md-row-height="2:2"
+                        md-gutter="12px" md-gutter-gt-sm="8px" >
+                        
+                        <md-grid-tile class="green">
+                          <md-grid-tile-footer>
+                            <h3>#2: (1r x 1c)</h3>
+                          </md-grid-tile-footer>
+                        </md-grid-tile>
+                        <md-grid-tile class="yellow">
+                          <md-grid-tile-footer>
+                            <h3>#3: (1r x 1c)</h3>
+                          </md-grid-tile-footer>
+                        </md-grid-tile>
+                        <md-grid-tile class="green">
+                          <md-grid-tile-footer>
+                            <h3>#2: (1r x 1c)</h3>
+                          </md-grid-tile-footer>
+                        </md-grid-tile>
+                        <md-grid-tile class="yellow">
+                          <md-grid-tile-footer>
+                            <h3>#3: (1r x 1c)</h3>
+                          </md-grid-tile-footer>
+                        </md-grid-tile>
+                       
+                      </md-grid-list>
+                    </md-content>
+                  </md-tab>
+                </md-tabs>
+              </md-content>
+            </div>
+            <div layout="row">
+              <div flex>
+                <md-list>
+                 <md-subheader class="md-no-sticky">Contact Info</md-subheader>
+                  <md-list-item class="md-2-line" ng-repeat="item in contacts">
+                   <ng-md-icon icon="{{item.icon}}" ng-style="{'fill': '#757575'}" class="md-avatar" size="32px" aria-label="{{item.title}}" ></ng-md-icon>
+                    <div class="md-list-item-text">
+                      <h3>{{ item.desc }}</h3>
+                      <p>{{item.title}}</p>
+                    </div>
+                    <md-divider md-inset ng-if="!$last"></md-divider>
+                  </md-list-item>
+                </md-list>
+              </div>
+              <div flex>Google Map</div>
+            </div>
+
+
+          </md-card>
+        </md-content>

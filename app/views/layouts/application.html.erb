@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head  >
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Saulius Skeirys</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<%= stylesheet_link_tag    'application', media: 'all' %>
+	<%= javascript_include_tag 'application' %>
+	<%= csrf_meta_tags %>
+
+   
+</head>
+
+<body ng-app="portfolioApp" layout="row">
+
+
+<%= yield %>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script> 
+</body>
+</html>

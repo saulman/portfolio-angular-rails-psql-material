@@ -1,0 +1,49 @@
+        <md-toolbar layout="column" class="md-tall md-hue-2">
+          <div class="md-toolbar-tools">
+            <span flex="90"></span>
+            <ng-md-icon flex icon="notifications" style="fill: white" size="24px"></ng-md-icon> 
+         </div>
+         
+          <div layout="column" layout-align="center center" class="md-toolbar-tools-bottom inset">
+            <user-avatar></user-avatar>
+            <span flex="10">&nbsp;</span>
+            <span class="md-headline">{{ user.first_name }} {{ user.last_name }}</span>
+            <span class="md-subhead">
+              <ng-md-icon icon="location_on" ng-style="{'fill': 'white'}"  size="24px" ></ng-md-icon>
+              {{ user.city }}, {{ user.state | uppercase }}</span>
+          </div>
+        </md-toolbar>
+        <md-list class="mainMenu" >
+          <div layout="row "  layout-wrap style="padding: 20px 30px;">
+            <md-item md-ink-ripple class="clickable" ng-repeat="item in menu" flex="33">
+              <a href="{{item.title | lowercase }}">
+                <md-item-content layout="column" layout-wrap layout-align="start center" ng-style="{'background-color' : item.bgColor}">
+                  <div class="inset" >
+                    <ng-md-icon icon="{{item.icon}}" ng-style="{'fill': item.txtColor}"  size="38px" aria-label="{{item.title}}" ></ng-md-icon>
+                  </div>
+                  <div class="inset font-12" ng-style="{'color': item.txtColor, 'padding-top': '0'}">{{item.title}}</div>
+                </md-item-content>
+              </a>
+            </md-item>
+          </div>
+        </md-list>
+
+        <md-list>
+          <md-subheader class="md-no-sticky">Timeline</md-subheader>
+          <md-list-item md-ink-ripple class="md-2-line" ng-repeat="item in timeline">
+           <ng-md-icon class="icon" icon="{{item.evenType}}" ng-style="{'fill' : '#EEEEEE', 'background-color': item.eventColor, 'margin-top':'10px'}" size="18px"  ></ng-md-icon>
+            <div class="md-list-item-text" layout="column">
+              <h4>{{ item.eventName }}</h4>
+              <p>{{ item.eventMessage }}</p>
+              <small class="text-muted ng-binding"> 
+                <ng-md-icon  icon="access_time"   size="12px"></ng-md-icon> 
+                {{ item.eventTime }}
+              </small>
+            </div>
+          </md-list-item>-
+         </md-list>
+
+
+
+
+     

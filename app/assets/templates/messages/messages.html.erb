@@ -1,0 +1,28 @@
+		   <div ng-include="'toolbar.html'"></div>
+
+        <md-content>
+          <div layout="row"  layout-align="center center" layout-margin>
+          <h5 flex-gt-sm="90" flex-gt-md="80">Past Month
+          </h5>
+          </div>
+
+        <div layout="row" layout-align="center start" >
+          
+          <md-card flex-gt-sm="90" flex-gt-md="80" >
+            <md-list  ng-repeat="item in messages" ng-click="showDetails = ! showDetails">
+              <md-list-item md-ink-ripple class="md-2-line" >
+                 <ng-md-icon icon="timer_auto"  ng-class="'icon'" ng-style="{'fill':'#fff','margin-top':'10px','background-color': 'rgb(224, 224, 224)'}" ></ng-md-icon>
+                <div class="md-list-item-text" layout="column">
+                  <h3>{{ item.question }}</h3>
+                </div>
+
+              </md-list-item>
+              <md-content ng-show="showDetails" class="ng-hide" ng-mouseleave="showDetails = !showDetails" flex layout-padding>
+                  <p><b>Me:</b> {{ item.answer }}</p>
+              </md-content>
+            </md-list>
+          </md-card>
+         </div>
+        </md-content>
+
+

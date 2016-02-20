@@ -1,0 +1,38 @@
+<md-button href="blog/new" class="md-fab md-fab-bottom-right" aria-label="Add Post">
+   <ng-md-icon icon="add"  ng-style="{'fill':'#fff'}" ></ng-md-icon>
+</md-button>
+<div ng-include="'toolbar.html'"></div>
+ <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column" >
+    <div ng-repeat="item in posts" flex="30" flex-xs="100" layout="column">
+      <md-card>
+        <md-card-header>
+            <ng-md-icon hide-xs icon="{{item.icon}}"  ng-class="'icon'" ng-style="{'fill':'#fff','background-color': item.icon_color}" ></ng-md-icon>
+       
+          <md-card-header-text>
+            <span class="md-title">{{item.title}}</span>
+            <span class="md-subhead">{{item.category}}</span>
+          </md-card-header-text>
+        </md-card-header>
+         <div class="portfolio-bg" ng-style="{'background-image':'url({{item.main_image}})'}">
+         </div>
+        <md-card-content>
+          <p> 
+          {{item.sub_title}}           
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="start center">
+          <md-card-icon-actions>
+            <md-button class="md-icon-button" aria-label="Favorite">
+              <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+              <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+            </md-button>
+          </md-card-icon-actions>
+          
+          <md-button ui-sref="blogPost({ postId : item.post_id })">Full Story</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+       
+  </md-concent>

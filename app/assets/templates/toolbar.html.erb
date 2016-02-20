@@ -1,0 +1,44 @@
+<md-toolbar layout-align="center center"  ng-show="!showSearch" class="md-whiteframe-3dp fade" ng-style="{'background-color':primaryColor}">
+
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+              <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+            <h3>
+              {{title}}
+            </h3>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="Search" ng-click="showSearch = !showSearch">
+              <ng-md-icon icon="search"></ng-md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+              <ng-md-icon icon="settings"></ng-md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+
+        <md-toolbar class="md-hue-1 md-whiteframe-3dp fade" ng-show="showSearch">
+      		<div class="md-toolbar-tools">
+            <md-button ng-click="showSearch = !showSearch" aria-label="Back" style="min-width:0;">
+              <ng-md-icon icon="arrow_back"></ng-md-icon>
+            </md-button>
+            <h3 >
+              Back
+            </h3>
+				<span hide-gt-xs flex="20"></span>
+        <span hide-xs flex></span>
+				<md-input-container  class="no-input-error" >
+					<label></label>
+					<input ng-model="search.who" placeholder="enter search">
+				</md-input-container>
+
+				<!--<md-button   class="md-icon-button" aria-label="Search" ng-click="showSearch = !showSearch">
+					<ng-md-icon icon="search"></ng-md-icon>
+				</md-button>
+        -->
+				<md-button  class="md-icon-button"  aria-label="Open Settings" ng-click="showListBottomSheet($event)">
+					<ng-md-icon icon="settings"></ng-md-icon>
+				</md-button>
+          	</div>
+         
+        </md-toolbar>
