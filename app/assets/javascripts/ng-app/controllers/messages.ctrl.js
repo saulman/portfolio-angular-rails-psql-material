@@ -11,9 +11,10 @@ var app = angular.module('portfolioApp')
  	//geting messages color
     $scope.primaryColor = getUser.data[0].dash[1].bgColor;
 
-  
-
     $scope.toggleSidenav = function(menuId) {
-      $mdSidenav(menuId).toggle();
+		$mdSidenav(menuId).toggle();
+
     };
+  
+		
 }])

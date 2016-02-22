@@ -163,6 +163,33 @@ app.factory('getMessages', [function(){
         "publish" : "Y",
         "date": "11/12/15"
       },
+       {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+       {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+       {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
       {
         "user_id": "1",
         "msg_id" : "3",
@@ -171,6 +198,87 @@ app.factory('getMessages', [function(){
         "answer" : "I live in Chicago.",
         "publish" : "Y",
         "date": "11/13/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
+      },
+      {
+        "user_id": "1",
+        "msg_id" : "2",
+        "question": "How old are you?",
+        "question_icon": "timer_auto",
+        "answer" : "Thank you, I am 24.",
+        "publish" : "Y",
+        "date": "11/12/15"
       }]
   };
   return obj;

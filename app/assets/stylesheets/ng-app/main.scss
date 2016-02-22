@@ -1,6 +1,6 @@
-body {
+html, body {
   color: rgba(0,0,0,0.37);
-  background-color: #ECECEC;
+  background-color: #ECECEC !important;
 }
       
  a {
@@ -338,7 +338,7 @@ body {
 }
 
 .toolbar-box{
-    height: 250px;
+    height: 300px;
 }
 
 .toolbar-box .md-toolbar-title {
@@ -364,4 +364,24 @@ body {
 
 .layout-column > .flex-xs-100, .layout-xs-column > .flex-xs-100 {
   width: 100%;
+}
+
+.ng-hide {
+  display: none;
+  height: 0;
+   -webkit-transition:all linear 0.2s;
+  width: 0;
+  background-color: transparent;
+  top:-200px;
+  left: 200px;
+}
+
+
+.md-button.md-fab.md-fab-bottom-right {
+  position:fixed;
+}
+
+
+.fixed {
+  position: fixed;
 }

@@ -28,7 +28,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
             }
         }
     })
- 
+  
     .state('dashboard', {
         url: '/dashboard',
         views: {
@@ -262,7 +262,7 @@ app.animation('.fade', function() {
       }
     ];
 
-    
+     
 
      $scope.go = function ( path ) {
         $location.path( path );

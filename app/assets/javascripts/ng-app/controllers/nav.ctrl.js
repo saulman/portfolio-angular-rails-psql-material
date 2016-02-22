@@ -1,6 +1,6 @@
   var app = angular.module('portfolioApp')
 
-  app.controller('naviCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog','getUser', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, getUser){
+  app.controller('naviCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog','$location','getUser', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, $location, getUser){
     
       $scope.imagePath = 'images/chicago_sunny.jpg';
    
@@ -8,7 +8,23 @@
       $scope.user = getUser.data[0];
 
       $scope.menu = getUser.data[0].dash;
-      
+
+      $scope.location = $location.path();
+
+     if($scope.location == "/" || $scope.location == "/dashboard"){
+            $scope.leftOpen = true
+          
+        } else {
+             $scope.leftOpen = false
+         
+        }
+
+
+
+
+
+     
+
       $scope.timeline = [
         {
           link : '',

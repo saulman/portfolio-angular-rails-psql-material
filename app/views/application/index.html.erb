@@ -1,7 +1,4 @@
- <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" ui-view="navigation">
+ 	<md-sidenav layout="column"  class="md-sidenav-left md-whiteframe-z2 " md-component-id="left" md-is-open="leftOpen" md-is-locked-open="leftOpen && $mdMedia('gt-md')" ui-view="navigation">
     </md-sidenav>
-    <md-content flex class="view" ui-view="content">
-
-    
-
-    </md-content>
+    <div layout="column" flex class="view main-content" ui-view="content" >
+    </div>
