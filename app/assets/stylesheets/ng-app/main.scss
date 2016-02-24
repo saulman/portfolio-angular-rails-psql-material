@@ -271,6 +271,17 @@ html, body {
       text-align: center;
     }
 
+
+   .md-list-posts{
+      overflow:scroll;
+      background:#ffffff;
+    }
+
+    .md-list-post-image{
+      width: 150px;
+      height: 100px;
+      padding: 15px 0;
+    }
     md-list-item md-divider[md-inset]{
       left:70px;
     }
@@ -338,7 +349,7 @@ html, body {
 }
 
 .toolbar-box{
-    height: 300px;
+    height: 350px;
 }
 
 .toolbar-box .md-toolbar-title {
