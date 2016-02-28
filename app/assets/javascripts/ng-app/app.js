@@ -60,6 +60,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
     })
 
     .state('blog', {
+        
         url: '/blog',
         views: {
             'navigation': {
@@ -70,10 +71,43 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
                 templateUrl: 'blog/blog.html',
                 controller: 'blogCtrl'
             }
+            
+        }         
+    })
+    /*
+    .state('contacts.list', {
+        url: '/list',
+        templateUrl: 'contacts.list.html'
+    })
+*/
+    .state('blog.post', {
+        url: '/:id',
+        templateUrl: 'blog/blog.post.html',
+        controller: 'blogPostCtrl'
+    })
+/*
+    .state('blog', {
+        url: '/blog',
+        views: {
+            'navigation': {
+                templateUrl: 'nav.html',
+                controller: 'naviCtrl'
+            },
+            'content': {
+                templateUrl: 'blog/blog.html',
+                controller: 'blogCtrl'
+            }
+            
         }
     })
 
-    .state('blogShow', {
+    .state('blog.post', {
+      templateUrl: 'blog/blog.post.html',
+      controller: 'blogPostCtrl'
+    })
+
+
+  .state('blogShow', {
         url: "/blog/:postId ",
          views: {
             'navigation': {
@@ -81,8 +115,8 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
                 controller: 'naviCtrl'
             },
             'content': {
-                templateUrl: 'blog/blog.post.html',
-                controller: 'blogPostCtrl'
+                templateUrl: 'blog/blog.html',
+                controller: 'blogCtrl'
             }
         }
     })
@@ -100,7 +134,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
             }
         }
     })
-
+*/
     .state('portfolio', {
         url: '/portfolio',
         views: {
@@ -214,7 +248,7 @@ app.animation('.fade', function() {
     $scope.CustomStyle = {};
     $scope.projectInfo = {}
     $scope.imagePath = 'images/chicago_sunny.jpg';
-
+     $scope.dash = 'dash';
     //geting blog title
     $scope.title = getUser.data[0].dash[0].title;
     //geting dashboard color

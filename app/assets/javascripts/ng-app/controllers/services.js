@@ -88,7 +88,7 @@ app.factory('getPosts', [function(){
   var obj = {
     posts: [{
         "user_id": "1",
-        "post_id" : "1",
+        "post_id" : "0",
         "title": "What is the best city to live?",
         "sub_title" : "Guess?",
         "category" : "Category",
@@ -101,8 +101,8 @@ app.factory('getPosts', [function(){
       },
       {
         "user_id": "1",
-        "post_id" : "2",
-        "title": "What is the best city to live?",
+        "post_id" : "1",
+        "title": "What is the best country to live?",
         "sub_title" : "Guess?",
         "category" : "Category",
         "icon" : "layers",
@@ -114,8 +114,8 @@ app.factory('getPosts', [function(){
       },
       {
         "user_id": "1",
-        "post_id" : "3",
-        "title": "What is the best city to live?",
+        "post_id" : "2",
+        "title": "What is the best state to live?",
         "sub_title" : "Guess?",
         "category" : "Category",
         "icon" : "place",
@@ -150,7 +150,7 @@ app.factory('getMessages', [function(){
         "msg_id" : "1",
         "question": "How are you doing?",
         "question_icon": "timer_auto",
-        "answer" : "Thank you, I am fine.",
+        "answer" : "Thank you, I am fine.Thank you, I am fine.Thank you, I am fine.Thank you, I am fine.Thank you, I am fine.Thank you, I am fine.Thank you, I am fine.Thank you, I am fine.",
         "publish" : "Y",
         "date": "11/12/15"
       },

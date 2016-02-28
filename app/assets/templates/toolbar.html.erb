@@ -1,9 +1,14 @@
 <md-toolbar layout-align="center center"  ng-show="!showSearch" class="md-whiteframe-3dp fade" ng-style="{'background-color':primaryColor}" >
 
           <div class="md-toolbar-tools">
-            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" ng-if="dash != 'dash'"  aria-label="Menu">
               <ng-md-icon icon="menu"></ng-md-icon>
             </md-button>
+
+            <md-button class="md-icon-button" ng-click="toggleSidenav('left')" ng-if="dash == 'dash'" hide-gt-md aria-label="Menu">
+              <ng-md-icon icon="menu"></ng-md-icon>
+            </md-button>
+
             <h3>
               {{title}}
             </h3>
