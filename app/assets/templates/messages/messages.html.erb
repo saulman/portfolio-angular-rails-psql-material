@@ -1,7 +1,7 @@
 		 
 
-<md-toolbar  ng-if="menu" class="toolbar-box"  ng-class="{'fixed' : menu"} ng-style="{'background-color':primaryColor}">
-    <div class="md-toolbar-tools">
+<md-toolbar   ng-if="menu"  ng-class="{'fixed' : menu"} ng-style="{'background-color':primaryColor}">
+    <div class="md-toolbar-tools" > 
       <md-button class="md-icon-button" ng-click="toggleSidenav('left')" aria-label="Menu">
         <ng-md-icon icon="menu"></ng-md-icon>
       </md-button>
@@ -12,8 +12,8 @@
   </div>
 </md-toolbar>
   
-<md-toolbar  ng-if="!menu" md-scroll-shrink="" ng-style="{'background-color':primaryColor}">
-    <div class="md-toolbar-tools">
+<md-toolbar  ng-if="!menu"  md-scroll-shrink="" ng-style="{'background-color':primaryColor}">
+    <div class="md-toolbar-tools" >
       <md-button class="md-icon-button" ng-click="toggleSidenav('left')" ng-model="menu" aria-label="Menu">
         <ng-md-icon icon="menu"></ng-md-icon>
       </md-button>
@@ -22,34 +22,12 @@
   </h3>
     </div>
 </md-toolbar>
-<!--
- <md-toolbar class="toolbar-box" layout-align="center start" >
-  <div flex class="md-toolbar-tools ">
-    <md-button class="md-icon-button" ng-click="toggleSidenav('left')" aria-label="Menu">
-      <ng-md-icon icon="menu"></ng-md-icon>
-    </md-button>
-  <h3 >
-  </h3>
-  </div>
-  <div flex></div>
-  <div layout="row" layout-align="center center" style="width:100%">
-      <h1 class="toolbar-title md-display-3" flex-gt-sm="90" flex-gt-md="60">Messages</h1>
-  </div>
-  </md-toolbar>
 
- <md-toolbar ng-show="scrolled" layout="column" layout-align="center start" style="position:fixed" >
-  <div flex class="md-toolbar-tools ">
-    <md-button class="md-icon-button" ng-click="toggleSidenav('left')" aria-label="Menu">
-      <ng-md-icon icon="menu"></ng-md-icon>
-    </md-button>
-  <h3 >
-    Messages
-  </h3>
-  </div>
-  
-  </md-toolbar>
--->
-  <md-content layout="row" layout-align="center start">
+<div  class="toolbar-bg-box" md-scroll-shrink="" ng-style="{'background-color':primaryColor}">
+</div>
+
+
+  <div layout="row" layout-align="center start" class="toolbar-content">
     <md-card  flex-gt-sm="90" flex-gt-md="60" >
      <md-subheader class="md-no-sticky"><b>Past Messages</b></md-subheader>
       <md-list  ng-repeat="item in messages" ng-click="showDetails = ! showDetails" style="cursor:pointer">
@@ -66,12 +44,12 @@
       </md-list>
     </md-card>
 
-</md-content>
+</div>
 
 
     
 
 
-<md-button href="blog/new" class="md-fab md-fab-bottom-right" aria-label="Add Post">
+<md-button ng-click="ctrl.openSendBox($event)"  class="md-fab md-fab-bottom-right" aria-label="Add Post">
    <ng-md-icon icon="add"  ng-style="{'fill':'#fff'}" ></ng-md-icon>
 </md-button>

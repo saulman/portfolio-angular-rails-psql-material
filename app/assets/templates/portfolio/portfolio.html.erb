@@ -1,32 +1,30 @@
-<div ng-include="'toolbar.html'"></div>
+<md-button href="blog/new" class="md-fab md-fab-bottom-right" aria-label="Add Post">
+   <ng-md-icon icon="add"  ng-style="{'fill':'#fff'}" ></ng-md-icon>
+</md-button>
 
+  <md-content layout="row">
+    <div class="md-list-posts"  flex="30" style="overflow:scroll">
+      <div  ng-include="'toolbar.html'"></div>
+      <md-card  ng-repeat="project in projects">
+          <div class="portfolio-bg" ng-style="{'background-image':'url({{imagePath}})'}">
+          </div>
+          <md-card-actions layout="row" layout-align="start center">
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-title">{{ project.title }}</span>
+                <span class="md-body-1">{{ project.date }}</span>
+              </md-card-title-text>
+            </md-card-title>
+            <md-button href="/portfolio/{{project.project_id}}">
+              <ng-md-icon icon="more_vert"></ng-md-icon>
+            </md-button>
+          </md-card-actions>
+        
+        </md-card>
 
- <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column" >
-    <div ng-repeat="item in projects" flex-gt-md="30" flex-xs="100" flex-gt-xs="50" layout="column">
-       <md-card  ng-style="{'background-color': primaryColor,'color':'#ffffff'}">
-              <div class="portfolio-bg" ng-style="{'background-image':'url({{item.main_image}})'}">
-
-                <md-card-title class="widget-title" layout="column">
-                  <span class="md-headline">{{ item.title}}</span>
-                  <span class="md-caption" style="text-transform: uppercase;"></span>
-                </md-card-title>
-                <div class="shadow"></div>
-              </div>
-
-              <md-card-content> 
-                <p>
-                  {{item.title}}
-                </p>
-              </md-card-content>
-              <md-card-actions layout="row" layout-align="start center">
-                <md-card-icon-actions>
-                  <span hide-xs ng-repeat="key in item.keywords"class="md-caption chip">{{key}}</span>
-                  <span flex></span>
-                  <md-button ui-sref="portfolioPost({ postId : item.project_id })" class="md-raised" ng-style="{'background-color':'rgb(255,64,129)','color':'#ffffff'}">Explore</md-button>
-              </md-card-icon-actions>
-          
-               
-              </md-card-actions>
-            </md-card>
     </div>
+      
+    <md-content flex ui-view="">
+    </md-content>
+
   </md-concent>

@@ -1,10 +1,21 @@
-       <div ng-include="'toolbar.html'"></div>
+        <div ng-include="'toolbar.html'"></div>
+        <div  class="toolbar-bg-box" md-scroll-shrink="" ng-style="{'background-color':primaryColor}">
+        </div>
 
 
+        <div class="toolbar-content" layout="row" layout-wrap layout-align="center start" layout-xs="column" >
+          <md-card flex-gt-sm="90" flex-gt-md="60">
+           <div layout="column" layout-align="center start" style="height:300px" ng-style="{'background-image':'url({{imagePath}})'}">
+              <div flex>
+              </div>
+              <div layout="row" layout-align="center center" style="width:100%;background:-webkit-linear-gradient(transparent, rgba(0,0,0,1))" layout-padding> 
+                <div flex-gt-sm="90" flex-gt-md="70">
+                  <h4 class="toolbar-title md-display-2" style="color:#fff;margin-bottom:0;">Saulius Skeirys</h4>
+                </div>  
 
-        <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
-          <md-card flex-gt-sm="90" flex-gt-md="80" >
-            <div ng-cloak>
+              </div>
+            </div>
+            <div ng-cloak >
               <md-content class="bg-white">
                 <md-tabs md-dynamic-height md-border-bottom>
                   <md-tab label="About Me">
@@ -65,4 +76,4 @@
 
 
           </md-card>
-        </md-content>
+        </div>

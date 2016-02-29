@@ -11,6 +11,8 @@ var app = angular.module('portfolioApp')
 
 	$scope.contacts = getUser.data[0].contacts;
 
+	$scope.imagePath = "http://conradhotels3.hilton.com/resources/media/ch/en_US/img/shared/carousel/main/CN_chicagosunset.jpg"
+
 	$scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();
     };

@@ -288,7 +288,7 @@ app.factory('getProjects', [function(){
   var obj = {
     projects: [{
         "user_id": "1",
-        "project_id" : "1",
+        "project_id" : "0",
         "title": "Sportomeistrai design",
         "sub_title" : "Guess?",
         "content": "Created design & other features",
@@ -298,7 +298,7 @@ app.factory('getProjects', [function(){
       },
       {
         "user_id": "1",
-        "project_id" : "2",
+        "project_id" : "1",
         "title": "Codesaurs",
         "sub_title" : "Guess?",
         "content": "The best place to live is Chicago",
@@ -308,8 +308,8 @@ app.factory('getProjects', [function(){
       },
       {
         "user_id": "1",
-        "project_id" : "3",
-        "title": "What is the best city to live?",
+        "project_id" : "2",
+        "title": "Skeirys",
         "sub_title" : "Guess?",
         "content": "The best place to live is Chicago",
         "main_image" : "./images/design3.jpg",

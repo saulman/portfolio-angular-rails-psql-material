@@ -8,6 +8,7 @@ var app = angular.module('portfolioApp')
 	$scope.primaryColor = getUser.data[0].dash[3].bgColor;
 	
  	 $scope.projects = getProjects.projects
+	$scope.imagePath = 'http://tactivedigital.com/wp-content/uploads/2015/03/slide1.jpg';
 
  	 $scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();

@@ -85,6 +85,8 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
         templateUrl: 'blog/blog.post.html',
         controller: 'blogPostCtrl'
     })
+
+
 /*
     .state('blog', {
         url: '/blog',
@@ -135,6 +137,35 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
         }
     })
 */
+
+   .state('portfolio', {
+        
+        url: '/portfolio',
+        views: {
+            'navigation': {
+                templateUrl: 'nav.html',
+                controller: 'naviCtrl'
+            },
+            'content': {
+                templateUrl: 'portfolio/portfolio.html',
+                controller: 'portfolioCtrl'
+            }
+            
+        }         
+    })
+    /*
+    .state('contacts.list', {
+        url: '/list',
+        templateUrl: 'contacts.list.html'
+    })
+*/
+    .state('portfolio.post', {
+        url: '/:id',
+        templateUrl: 'portfolio/portfolio.post.html',
+        controller: 'portfolioPostCtrl'
+    })
+/*
+
     .state('portfolio', {
         url: '/portfolio',
         views: {
@@ -163,7 +194,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
             }
         }
     })
-
+*/
     .state('resume', {
         url: '/resume',
         views: {
@@ -247,7 +278,7 @@ app.animation('.fade', function() {
 
     $scope.CustomStyle = {};
     $scope.projectInfo = {}
-    $scope.imagePath = 'images/chicago_sunny.jpg';
+    $scope.imagePath = 'http://tactivedigital.com/wp-content/uploads/2015/03/slide1.jpg';
      $scope.dash = 'dash';
     //geting blog title
     $scope.title = getUser.data[0].dash[0].title;

@@ -11,6 +11,8 @@ var app = angular.module('portfolioApp')
  	//geting messages color
     $scope.primaryColor = getUser.data[0].dash[1].bgColor;
 
+    // SEND MESSAGE info https://material.angularjs.org/latest/demo/autocomplete
+
     $scope.toggleSidenav = function(menuId) {
 		$mdSidenav(menuId).toggle();
 

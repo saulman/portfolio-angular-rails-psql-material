@@ -129,7 +129,7 @@ html, body {
       }
 
       md-sidenav > .mainMenu {
-        margin-top: -114px;
+        margin-top: -109px;
         z-index: 3;
       }
       .font-12{
@@ -348,13 +348,27 @@ html, body {
     left: -100%;
 }
 
-.toolbar-box{
-    height: 350px;
+.post-box{
+  height: 350px;
 }
 
-.toolbar-box .md-toolbar-title {
+.toolbar-bg-box{
+    padding-bottom: 300px;
+}
+
+.post-box .md-toolbar-title {
   position:absolute;
   bottom:10px;
+}
+
+.toolbar-content{
+  position: relative;
+  z-index:50;
+  margin-top:-300px
+}
+
+.toolbar-content md-card {
+  margin-top:0;
 }
 
 .grid-cont{
