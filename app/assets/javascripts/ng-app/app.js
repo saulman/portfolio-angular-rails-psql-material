@@ -68,7 +68,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
                 controller: 'naviCtrl'
             },
             'content': {
-                templateUrl: 'blog/blog.html',
+                templateUrl: 'blog/blog.nav.html',
                 controller: 'blogCtrl'
             }
             
