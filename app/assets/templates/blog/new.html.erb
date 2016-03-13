@@ -1,0 +1,76 @@
+  <form>
+     <md-toolbar class="post-box"  layout="column" layout-align="center start">
+        <div flex class="md-toolbar-tools ">
+	        <md-button ng-click="goBack()" aria-label="Back" style="min-width:0;">
+	        <ng-md-icon icon="arrow_back"></ng-md-icon>
+	        </md-button>
+
+	        <h3 >
+	        Back
+	        </h3>
+	        <span flex></span>
+	        <!--<md-button class="md-icon-button">
+              <ng-md-icon icon="share"></ng-md-icon>
+            </md-button>
+            <md-button class="md-icon-button">
+              <ng-md-icon icon="favorite"></ng-md-icon>
+            </md-button>
+          -->
+        </div>
+        <div flex></div>
+        <div layout="row" layout-align="center center" style="width:100%" layout-padding> 
+        		<div flex-gt-sm="90" flex-gt-md="70">
+        			 <h4 class="toolbar-title md-display-2" > Create New Post </h4>
+                
+        		</div>  
+           
+        </div>
+
+
+      </md-toolbar>
+		  <md-content layout="row" layout-align="center center" layout-padding >
+		  	<div flex-gt-sm="90" flex-gt-md="70" style="background:white;padding:25px 100px">
+
+        <form name="postForm" ng-submit="save()" novalidate >
+          <md-input-container class="md-block">
+           <label>Title</label>
+           <input ng-model="post.title">
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>Subtitle</label>
+            <input ng-model="post.subtitle">
+          </md-input-container>
+
+          <div layout-gt-sm="row">
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Category</label>
+              <md-select ng-model="post.category">
+                <md-option ng-repeat="category in categories" value="{{ category.name }}">
+                 {{ category.name }}
+                </md-option>
+              </md-select>
+            </md-input-container>
+            <md-input-container class="md-block" flex-gt-sm>
+              <label>Category Color</label>
+              <md-select ng-model="post.category_color">
+                <md-option ng-repeat="color in colors" value="{{ color.value }}">
+                 {{color.name}}
+                </md-option>
+              </md-select>
+            </md-input-container>
+          </div>
+
+          <md-input-container class="md-block">
+          <label>Content</label>
+          <textarea ng-model="post.content" md-select-on-focus></textarea>
+          </md-input-container>
+          <div>
+          <span flex></span>
+          <md-button type="submit" class="md-raised md-primary" ng-click="save()">Submit</md-button>
+          </div>
+          
+        </form>
+      {{ post }}
+		  </md-content>
+<form>

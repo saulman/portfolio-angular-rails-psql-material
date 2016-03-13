@@ -83,7 +83,7 @@ app.factory('getUser', [function(){
   return obj;
 }]),
 
-
+/*
 app.factory('getPosts', [function(){
   var obj = {
     posts: [{
@@ -142,7 +142,7 @@ app.factory('getPosts', [function(){
   };
   return obj;
 }]);
-
+*/
 app.factory('getMessages', [function(){
   var obj = {
     messages: [{

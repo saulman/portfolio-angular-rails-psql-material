@@ -16,14 +16,14 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
  
     $stateProvider
     .state('home',{
-        url: '/',
+        url: '/dashboard',
         views: {
             'navigation': {
                 templateUrl: 'nav.html',
                 controller: 'naviCtrl'
             },
             'content': {
-                templateUrl: 'dashboard.html',
+                templateUrl: 'dashboard/index.html',
                 controller: 'mainCtrl'
             }
         }
@@ -37,7 +37,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
                 controller: 'naviCtrl'
             },
             'content': {
-                templateUrl: 'dashboard.html',
+                templateUrl: 'dashboard/index.html',
                 controller: 'mainCtrl'
             }
         }
@@ -68,7 +68,7 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
                 controller: 'naviCtrl'
             },
             'content': {
-                templateUrl: 'blog/blog.nav.html',
+                templateUrl: 'blog/index.html',
                 controller: 'blogCtrl'
             }
             
@@ -80,12 +80,22 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
         templateUrl: 'contacts.list.html'
     })
 */
+  .state('blog.new', {
+        url: '/new',
+        templateUrl: 'blog/new.html',
+        controller: 'blogNewCtrl'
+               
+    })
+    
     .state('blog.post', {
         url: '/:id',
-        templateUrl: 'blog/blog.post.html',
-        controller: 'blogPostCtrl'
+        templateUrl: 'blog/show.html',
+        controller: 'blogShowCtrl'
     })
 
+ 
+    
+    
 
 /*
     .state('blog', {
@@ -225,13 +235,13 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
     });
 
       // default fall back route
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/dashboard');
 
     // enable HTML5 Mode for SEO
-    $locationProvider.html5Mode({
-    enabled: true,
-    requireBase: false
-  });
+   // $locationProvider.html5Mode({
+   // enabled: true,
+   // requireBase: false
+ // });
 
     var customBlueMap = $mdThemingProvider.extendPalette('light-blue', {
       'contrastDefaultColor': 'light',
@@ -271,10 +281,28 @@ app.animation('.fade', function() {
     }
   }
 })
-   app.controller('mainCtrl', ['$scope', '$location','$mdBottomSheet','$mdSidenav', '$mdDialog','getUser','getPosts','getMessages','getProjects', function($scope, $location, $mdBottomSheet, $mdSidenav, $mdDialog, getUser, getPosts, getMessages, getProjects){
+
+
+app.factory('Info', ['$resource',function($resource){
+  return $resource('/info.json', {},{
+    query: { method: 'GET', isArray: false},
+    create: { method: 'POST' }
+  })
+}]);
+
+
+
+
+   app.controller('mainCtrl', ['$scope', '$location','$mdBottomSheet','$mdSidenav', '$mdDialog','getUser','getPosts','getMessages','getProjects','Info', function($scope, $location, $mdBottomSheet, $mdSidenav, $mdDialog, getUser, getPosts, getMessages, getProjects,Info ){
     $scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();
     };
+
+   
+     Info.query(function(data){
+        $scope.posts = data.posts;
+       // $scope.movies = data.movies;
+      });
 
     $scope.CustomStyle = {};
     $scope.projectInfo = {}

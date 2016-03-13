@@ -1,0 +1,54 @@
+<md-button href="/blog/new" class="md-fab md-fab-bottom-right" aria-label="Add Post">
+   <ng-md-icon icon="add"  ng-style="{'fill':'#fff'}" ></ng-md-icon>
+</md-button>
+
+
+  <md-content layout="row">
+    <div class="md-list-posts"  flex="30" style="overflow:scroll">
+
+      <div  ng-include="'toolbar.html'"></div>
+
+      <md-list class="md-list-posts"  ng-repeat="post in posts">
+        <md-list-item class="md-3-line" href="#/blog/{{post.id}}">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{post.title}}</h3>
+            <h4> {{post.subtitle}}</h4>
+            <p> {{post.created_at | date : format : timezone}}</p>
+          </div>
+           <img ng-src="{{item.face}}?{{$index}}" class="md-list-post-image" alt="{{item.who}}" /> 
+        </md-list-item>
+        <md-divider ></md-divider>
+      </md-list>
+    </div>
+
+    <md-content flex ui-view="">
+    </md-content>
+
+</md-content>
+  
+ <!-- 
+
+  <md-content flex>
+     <md-toolbar class="toolbar-box"  layout="column" layout-align="center start">
+        <div flex class="md-toolbar-tools ">
+        <md-button ng-click="goBack()" aria-label="Back" style="min-width:0;">
+        <ng-md-icon icon="arrow_back"></ng-md-icon>
+        </md-button>
+        <h3 >
+        Back
+        </h3>
+
+        </div>
+        <div flex></div>
+        <div layout="row" layout-align="center center" style="width:100%">
+        
+            <h3 class="toolbar-title md-display-2" flex-gt-sm="90" flex-gt-md="80">{{ post.title }} </h3>
+          
+        </div>
+      </md-toolbar>
+  </md-concent>
+
+</md-content>
+   
+ 
+-->

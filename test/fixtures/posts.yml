@@ -3,9 +3,13 @@
 one:
   title: MyString
   subtitle: MyString
+  category: MyString
   content: MyString
+  category_color: MyString
 
 two:
   title: MyString
   subtitle: MyString
+  category: MyString
   content: MyString
+  category_color: MyString

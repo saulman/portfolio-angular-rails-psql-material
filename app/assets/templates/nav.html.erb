@@ -16,7 +16,7 @@
         <md-list class="mainMenu" >
           <div layout="row "  layout-wrap style="padding: 20px 30px;">
             <md-item md-ink-ripple class="clickable" ng-repeat="item in menu" flex="33">
-              <a href="/{{item.title | lowercase }}">
+              <a href="/#/{{item.title | lowercase }}">
                 <md-item-content layout="column" layout-wrap layout-align="start center" ng-style="{'background-color' : item.bgColor}">
                   <div class="inset" >
                     <ng-md-icon icon="{{item.icon}}" ng-style="{'fill': item.txtColor}"  size="38px" aria-label="{{item.title}}" ></ng-md-icon>

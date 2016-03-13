@@ -1,0 +1,162 @@
+		<div ng-include="'toolbar.html'"></div>
+        <md-content class="md-padding" layout="row" layout-wrap layout-align="center start" >
+          <div class="padding-8" flex="50"  flex-xs="100" layout="column">
+           
+            <!-- Chat Widget -->
+            <md-card id="chat" ng-init="sendMessage=false">
+              <md-card-content>
+                <md-list ng-repeat="item in messages | limitTo: 1">
+                  <md-list-item flex="80"class="md-1-line">
+                    <ng-md-icon icon="{{item.question_icon}}"  ng-class="'icon'" ng-style="{'fill':'#fff'}" size="28px"  ></ng-md-icon>
+                    <div class="md-list-item-text" layout="column">
+                      <span class="message question md-body-1">{{ item.question }}</span>
+                    </div>
+                  </md-list-item>
+                  <div layout="row" class="margin-top-20">
+                    <span flex="20">&nbsp;</span>
+                    <md-list-item flex layout-align="center end" class="md-1-line" >
+                      <span flex ></span>
+                      <div class="md-list-item-text" layout="column">
+                        <span class="message answer md-body-1">{{ item.answer }}</span>
+                      </div>
+                      <user-listavatar></user-listavatar>
+                    </md-list-item>
+                  </div>
+                </md-list>
+                
+              </md-card-content>
+              <md-card-actions class="fade" ng-hide="sendMessage" ng-animate="'sendMessage'" layout="row" layout-align="start center" layout-padding>
+                  <md-button ng-click="go('/messages')">View All</md-button>
+                  <span flex></span>
+                  <md-button class="md-primary " ng-click="sendMessage = !sendMessage">Ask Me</md-button>
+              </md-card-actions>
+
+              <md-card-actions class="fade" ng-show="sendMessage" ng-animate="'sendMessage'" layout="row" layout-align="start center" layout-padding style="padding:0px 8px 0px 8px">
+                  <md-input-container class="md-block" style="    padding: 0px 8px;margin:0px;" flex-gt-sm>
+                    <label>message</label>
+                    <input md-maxlength="150" required name="message" ng-model="chat.gmessage" />
+                  </md-input-container>
+                  <md-button class="md-raised md-primary" ng-click="sendMessage = !sendMessage;showConfirm($event)">Send</md-button>
+              </md-card-actions>
+
+            </md-card>
+
+            <!-- Portfolio Widget -->
+            <md-card ng-repeat="item in projects | limitTo: 1" ng-style="{'background-color': PortfolioColor,'color':'#ffffff'}">
+              <div class="portfolio-bg" ng-style="{'background-image':'url({{item.main_image}})'}">
+
+                <md-card-title class="widget-title" layout="column">
+                  <span class="md-headline">Latest Projects</span>
+                  <span class="md-caption" style="text-transform: uppercase;">Personal experience that you might wanna check</span>
+                </md-card-title>
+                <div class="shadow"></div>
+              </div>
+
+              <md-card-actions  layout="row" layout-align="end center" class="fab-button">
+               <md-button ui-sref="portfolioPost({ postId : item.project_id })" class="md-fab" aria-label="Eat cake">
+                  <md-tooltip md-direction="top">
+                  More Information
+                  </md-tooltip>
+                    <ng-md-icon  icon="more_vert" style="fill: white" ></ng-md-icon> 
+                </md-button>
+              </md-card-actions>
+              <md-card-content style="margin-top:-30px;"> 
+                <p>
+                  {{item.title}}
+                </p>
+                <span ng-repeat="key in item.keywords"class="md-caption chip">{{key}}</span>
+              </md-card-content>
+            </md-card>
+          </div>
+
+          <div class="padding-8" flex="50"  flex-xs="100" layout="column">
+
+            <!-- Weather Widget -->
+            <md-card class="weather-header">
+              <div layout="row">
+              <md-card-header flex>
+                  <md-card-header-text>                
+                    <ng-md-icon icon="cloud" ng-style="{'fill':'#fff'}" size="75px"  ></ng-md-icon>
+                    <span class="md-subhead" ng-style="{'color':'#fff'}">Cloudy</span>
+                    <span class="md-headline" ng-style="{'color':'#fff'}">SATURDAY</span>
+                    <span class="md-title" ng-style="{'color':'#fff'}">Chicago, IL</span>
+                    <span flex>&nbsp;</span>
+                  </md-card-header-text>
+              </md-card-header>
+              <div class="weather-temp" layout="row" layout-align="end center">
+                <span class="md-display-2">85&deg;</span>
+              </div>
+              </div>
+              <md-card-content hide-xs ng-style="{'color':'#ffffff','background-color':'rgba(0, 0, 0, 0.3)'}">
+                <md-list layout="row" layout-align="center center">
+                    <md-list-item class="md-1-line" ng-repeat="item in weather" layout-align="center center" >
+                      <div layout="column" layout-align="center center" >
+                        <span class="md-title">{{item.day}}</span>
+                        <!--<ng-md-icon  icon="{{item.icon}}" ng-style="{'fill' : '#FFEB3B'}" size="36px"  ></ng-md-icon>   -->         
+                        <span class="md-body-1">{{item.tempNight}}&deg; / {{item.tempDay}}&deg; </span>
+                      </div>
+                    </md-list-item>-
+                 </md-list>
+              </md-card-content>
+            </md-card>
+
+            <!-- Blog Widget -->
+             <md-card hide-xs>
+             <md-card-title ng-style="{'background-color':'#3F51B5','color':'#ffffff'}">
+                <md-card-title-text>
+                  <span class="md-headline">Latest Blog Posts</span>
+                  <span class="md-caption" style="text-transform: uppercase;">Check my latest achievements</span>
+                </md-card-title-text>
+              </md-card-title>
+              
+              <md-card-content ng-style="{'padding-bottom':'0'}">
+                <md-list class="margin-top-20">
+                 <a ng-repeat="item in posts | limitTo: 3" ui-sref="blogShow({ postId : item.post_id })">
+                  <md-list-item  md-ink-ripple class="md-2-line" >
+                      <ng-md-icon icon="{{item.icon}}"  ng-class="'icon'" ng-style="{'fill':'#fff','margin-top':'10px','background-color': item.icon_color}" ></ng-md-icon>
+                       <div class="md-list-item-text">
+                          <h3>{{ item.title }}</h3>
+                          <p>Views {{ item.views }}</p>
+                        </div>
+                       <h5 class="md-caption">{{ item.date }}</h5>
+                  </md-list-item>
+                  </a>
+                  <div layout="row" layout-align="start center" layout-padding>
+                    <span flex></span>
+                      <md-button href="#blog" class="md-raised md-primary">View All</md-button>
+                  </div>
+                </md-list>
+              </md-card-content>
+            </md-card>
+
+            <md-card hide-gt-xs>
+            <a href="#blog">
+             <md-card-title ng-style="{'background-color':'#3F51B5','color':'#ffffff'}">
+                <md-card-title-text>
+                  <span class="md-headline">Latest Blog Posts</span>
+                  <span class="md-caption" style="text-transform: uppercase;">Check my latest achievements</span>
+                </md-card-title-text>
+              </md-card-title>
+            </a>
+            </md-card>
+
+
+             <!-- Reference Widget -->
+             <md-card  ng-style="{'background-color': '#03A9F4','color':'#ffffff'}">
+              <md-card-content >
+                <blockquote >
+                  <span class="md-headline italic">
+                    <q>His experience led the team to next level</q>
+                  </span>
+                </blockquote>
+                <div layout="column" layout-align="end end">
+                  <span class="md-subhead">Simonas Puskorius</span>
+                  <span class="md-caption">Adform, Lithuania</span>
+                </div> 
+                <md-card-actions>
+                  <md-button>READ FULL REVIEW</md-button>
+                </md-card-actions>
+              </md-card-content>
+            </md-card>
+          </div>
+        </md-content>
