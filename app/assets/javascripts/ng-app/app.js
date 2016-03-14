@@ -86,13 +86,18 @@ app.config(function($stateProvider, $urlRouterProvider,$mdThemingProvider,$locat
         controller: 'blogNewCtrl'
                
     })
-    
-    .state('blog.post', {
+
+    .state('blog.show', {
         url: '/:id',
         templateUrl: 'blog/show.html',
         controller: 'blogShowCtrl'
     })
 
+    .state('blog.edit', {
+        url: '/:id/edit',
+        templateUrl: 'blog/edit.html',
+        controller: 'blogEditCtrl'
+    })
  
     
     
@@ -293,7 +298,7 @@ app.factory('Info', ['$resource',function($resource){
 
 
 
-   app.controller('mainCtrl', ['$scope', '$location','$mdBottomSheet','$mdSidenav', '$mdDialog','getUser','getPosts','getMessages','getProjects','Info', function($scope, $location, $mdBottomSheet, $mdSidenav, $mdDialog, getUser, getPosts, getMessages, getProjects,Info ){
+   app.controller('mainCtrl', ['$scope', '$location','$mdBottomSheet','$mdSidenav', '$mdDialog','getUser','allPosts','getMessages','getProjects','Info', function($scope, $location, $mdBottomSheet, $mdSidenav, $mdDialog, getUser, allPosts, getMessages, getProjects,Info ){
     $scope.toggleSidenav = function(menuId) {
       $mdSidenav(menuId).toggle();
     };
@@ -315,7 +320,7 @@ app.factory('Info', ['$resource',function($resource){
     //getting portfolio color
     $scope.PortfolioColor = getUser.data[0].dash[3].bgColor;
 
-    $scope.posts = getPosts.posts;
+    $scope.posts = allPosts.query();
     $scope.messages = getMessages.messages;
     $scope.projects = getProjects.projects;
 

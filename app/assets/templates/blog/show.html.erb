@@ -29,6 +29,12 @@
       </md-toolbar>
 		  <md-content layout="row" layout-align="center center" layout-padding >
 		  	<div flex-gt-sm="90" flex-gt-md="70" style="background:white;padding:25px 100px">
-		   {{ post.content }} 
-		</div>
+          <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+            <span flex></span>
+            <md-button class="md-primary" href="#/blog/{{ post.id}}/edit">Edit</md-button>
+            <md-button class="md-warn" ng-click="deletePost(post.id)">Delete</md-button>
+          </section>
+		   
+          <p>{{ post.content }}</p> 
+		    </div>
 		  </md-content>

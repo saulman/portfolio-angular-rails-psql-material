@@ -2,9 +2,9 @@ class BlogController < ApplicationController
 	respond_to :html, :json
 	before_action :get_post, except: [:index, :create]
   skip_before_action :verify_authenticity_token
-  
+
 	def index
-	  	@post = Post.all
+	  	@post = Post.order(created_at: :desc)
 	    #@movie = Movie.all
 	    respond_with(@posts) do |format|
 	      
@@ -24,7 +24,7 @@ class BlogController < ApplicationController
     if @post.save
       render json: @post.as_json, status: :ok
     else
-      render json: {user: @post.errors, status: :no_content}
+      render json: {post: @post.errors, status: :no_content}
     end
   end       
 
@@ -37,7 +37,7 @@ class BlogController < ApplicationController
     if @post.update_attributes(post_params)
       render json: @post.as_json, status: :ok 
     else
-      render json: {user: @post.errors, status: :unprocessable_entity}
+      render json: {post: @post.errors, status: :unprocessable_entity}
     end
   end
 
