@@ -14,5 +14,4 @@ Will include:
 
 * Node.js (for live messaging and weather widget)
 
-[[https://github.com/saulman/portfolio-angular-rails-psql-material/blob/master/portfolio-1.jpg|alt=Portfolio]]
-
+![Alt text](https://github.com/saulman/portfolio-angular-rails-psql-material/blob/master/portfolio-1.jpg "Portfolio")
